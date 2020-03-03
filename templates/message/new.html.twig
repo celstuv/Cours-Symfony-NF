@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+  {{ form_start(formMessage)}}  
+    <h1>HTML</h1>
+    {{ form_label(formMessage.sender)}}
+    <br><br>
+    {{ form_widget(formMessage.sender)}}
+
+
+   {{ form_end(formMessage)}}  
+{% endblock %}
