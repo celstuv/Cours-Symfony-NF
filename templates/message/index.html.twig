@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Liste des messages
+{% endblock %}
+
+{% block body %}
+    {% for message in messages %}
+        Envoyé(e) par : {{ message.sender}} <br>
+        Message: {{ message.body}}<br> 
+        <a href="{{ path('message_show', { 'numero' : message.id, 'auhasard': 4})}}">Voir le détail de mon message </a>
+        <a href="{{ path('message_show_bis', { 'id' : message.id})}}">Voir le détail de mon message </a>
+        <br><br>
+        {# Commentaire #}
+       
+    {% endfor %}
+
+
+{% endblock %}
