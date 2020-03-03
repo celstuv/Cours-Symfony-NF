@@ -16,28 +16,32 @@ class MessageType extends AbstractType
     {
         $builder
             ->add('sender', TextType::class, [
+                'label' => 'Mon nom',
+                'label_attr' => [
+                    
+                    'class' => ''
+                ],
                 'attr' => [
-                    'label' => 'Mon nom',
+                    
                     'class' => 'form-control'
                 ]
             ])
             ->add('receiver', TextType::class, [
+                'label' => ' Destinaire',
                 'attr' => [
-                    'label' => ' Destinaire',
                     'class' => 'form-control'
                 ]
             ])
-            ->add('body', TextareaType::class
-            , [
+            ->add('body', TextareaType::class,
+            ['label' => ' Votre message',
                 'attr' => [
-                    'label' => ' Votre message',
                     'class' => 'form-control'
                 ]
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Envoyer le message',
                 'attr' => [
-                    'class' => 'btn btn-info'
+                    'class' => 'btn btn-info btn-sm'
                 ]
             ])
         ;
