@@ -18,30 +18,39 @@ class MessageType extends AbstractType
             ->add('sender', TextType::class, [
                 'label' => 'Mon nom',
                 'label_attr' => [
-                    
+                    'for' => 'nameSender',
                     'class' => ''
                 ],
                 'attr' => [
-                    
-                    'class' => 'form-control'
+                    'id' => 'nameSender',
+                    'class' => 'form-control mb-4',
                 ]
             ])
             ->add('receiver', TextType::class, [
-                'label' => ' Destinaire',
+                'label' => ' Destinataire',
+                'label_attr' => [
+                    'for' => 'nameReceiver',
+                    'class' => ''
+                ],
                 'attr' => [
-                    'class' => 'form-control'
+                    'id' => 'nameReceiver',
+                    'class' => 'form-control mb-4'
                 ]
             ])
             ->add('body', TextareaType::class,
             ['label' => ' Votre message',
+                'label_attr' => [
+                    'for' => 'form7'
+                ],
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'md-textarea form-control',
+                    'id' => 'form7'
                 ]
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Envoyer le message',
                 'attr' => [
-                    'class' => 'btn btn-info btn-sm'
+                    'class' => 'btn btn-info btn-block my-4'
                 ]
             ])
         ;
