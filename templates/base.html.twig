@@ -32,6 +32,9 @@
                 <li class="nav-item {{ (app.request.get('_route') == 'app_about') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ path('app_about') }}">A propos</a>
                 </li>
+                <li class="nav-item {{ (app.request.get('_route') == 'message_index') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ path('message_index') }}">Messages</a>
+                </li>
                 </ul>
                 <ul class="navbar-nav ml-auto nav-flex-icons">
                 <li class="nav-item avatar">

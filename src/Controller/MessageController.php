@@ -54,6 +54,40 @@ class MessageController extends AbstractController
     }
 
     /**
+     * @Route("/edit-{id}", methods={"GET", "POST"}, name="message_edit")
+     */
+    public function edit(Request $request, Message $message)
+    {
+
+        $form = $this->createForm(MessageType::class, $message);
+
+        $form->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($message);
+            $entityManager->flush();
+            return $this->redirectToRoute('message_index');
+        }
+        return $this->render('message/new.html.twig',
+        [
+            'formMessage' => $form->createView()
+        ]);
+
+    }
+
+    /**
+     * @Route("/delete-{id}", methods={"GET"}, name="message_delete")
+     */
+    public function delete(Message $message) {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($message);
+        $entityManager->flush();
+        return $this->redirectToRoute('message_index');
+    }
+
+    /**
      * @Route("/bis/{id}", methods={"GET"}, name="message_show_bis")
      */
     public function showbis(Message $message)
@@ -95,4 +129,6 @@ class MessageController extends AbstractController
         ]);
 
     }
+
+    
 }
