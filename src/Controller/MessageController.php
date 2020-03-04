@@ -33,25 +33,7 @@ class MessageController extends AbstractController
         );
     }
 
-    /**
-     * Le but de cette fonction est d'indiquer toutes les infos
-     * (message, date, sender, receiver, id)
-     * La fonction récupère l'id et le gestionnaire de message
-     * et renvoie a la vu l'objet message
-     * @Route("/{numero}/{auhasard}", methods={"GET"}, name="message_show")
-     */
-    public function show(MessageRepository $messageRepository, $numero, $auhasard)
-    {
 
-        $message = $messageRepository->find($numero);
-        return $this->render('message/show.html.twig',
-            [
-                'title' => 'Mes messages',
-                'message' => $message
-            ]
-        );
-
-    }
 
     /**
      * @Route("/edit-{id}", methods={"GET", "POST"}, name="message_edit")
