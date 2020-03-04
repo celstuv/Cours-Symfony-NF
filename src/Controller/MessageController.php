@@ -23,7 +23,8 @@ class MessageController extends AbstractController
      */
     public function index(MessageRepository $messageRepository)
     {
-        $listOfMessages = $messageRepository->findAll();
+        
+        $listOfMessages = $messageRepository->sortedByIdWithMax();
 
         return $this->render('message/index.html.twig',
             [

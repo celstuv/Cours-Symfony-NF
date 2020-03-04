@@ -21,8 +21,9 @@
         <div class="md-form">
           {{ form_widget(formMessage.body)}}
           {{ form_label(formMessage.body) }}
+          {{ form_errors(formMessage.body) }}
         </div>
-        {{ form_errors(formMessage.body) }}
+       
     
   {{ form_end(formMessage)}}  
 {% endblock %}
