@@ -14,6 +14,7 @@
         Message: {{ message.body}}<br> 
         <a class="btn btn-sm btn-dark float-right" href="{{ path('message_show_bis', { 'id' : message.id})}}">Voir le détail de mon message </a>
         <a class="btn btn-sm orange float-right" href="{{ path('message_edit', { 'id' : message.id})}}">Modifier </a> 
+         <a class="btn btn-sm btn-danger float-right" href="{{ path('message_delete', { 'id' : message.id})}}">Supprimer </a> 
         <br><hr><br>
         {# Commentaire #}
        
